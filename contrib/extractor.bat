@@ -36,15 +36,15 @@ IF %M%==6 GOTO :EOF
 
 :MAPS
 ECHO.
-START /b /w mapextractor.exe
+START /b /w map_extractor.exe
 TIMEOUT 5 > NUL
 CLS
 GOTO MENU
 
 :VMAPS
 ECHO.
-START /b /w vmap4extractor.exe
-START /b /w vmap4assembler.exe Buildings vmaps
+START /b /w vmap4_extractor.exe
+START /b /w vmap4_assembler.exe Buildings vmaps
 RMDIR Buildings /s /q
 TIMEOUT 5 > NUL
 CLS
@@ -63,11 +63,11 @@ GOTO MENU
 ECHO.
 ECHO This may take a few hours to complete. Please be patient.
 TIMEOUT 5 > NUL
-START /b /w mapextractor.exe
+START /b /w map_extractor.exe
 TIMEOUT 5 > NUL
-START /b /w vmap4extractor.exe
+START /b /w vmap_4extractor.exe
 TIMEOUT 5 > NUL
-START /b /w vmap4assembler.exe
+START /b /w vmap4_assembler.exe
 RMDIR Buildings /s /q
 TIMEOUT 5 > NUL
 START /b /w mmaps_generator.exe
@@ -83,17 +83,17 @@ ECHO This may take a few hours to complete. Please be patient.
 ECHO.
 TIMEOUT 5 > NUL
 ECHO Extracting cameras, dbc and maps.
-START /b /w mapextractor.exe 2>&1 > mapextractor.log
+START /b /w map_extractor.exe 2>&1 > map_extractor.log
 ECHO cameras, dbc and maps extracted.
 ECHO.
 TIMEOUT 5 > NUL
 ECHO Extracting Buildings for Vmaps.
-START /b /w vmap4extractor.exe 2>&1 > vmap4extractor.log
+START /b /w vmap4_extractor.exe 2>&1 > vmap4_extractor.log
 ECHO Buildings for Vmaps extracted.
 ECHO.
 TIMEOUT 5 > NUL
 ECHO Assembling Buildings with Vmaps.
-START /b /w vmap4assembler.exe 2>&1 > vmap4assembler.log
+START /b /w vmap4_assembler.exe 2>&1 > vmap4_assembler.log
 RMDIR Buildings /s /q
 ECHO Buildings with Vmaps Assembled.
 ECHO.
